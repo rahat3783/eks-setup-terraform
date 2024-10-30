@@ -12,22 +12,22 @@ pipeline {
                 echo "successfully clonning"
             }
         }
-      stage(Initializing Terraform){
+      stage('Initializing Terraform'){
         steps{
           sh 'terraform init'
         }
       }
-      stage(Validate terraform){
+      stage('Validate terraform'){
         steps{
           sh 'terraform validate'
         }
       }
-       stage(Previewing Infrasructure){
+       stage('Previewing Infrasructure'){
         steps{
           sh 'terraform plan'
         }
       }
-       stage(creating eks cluster){
+       stage('creating eks cluster'){
         steps{
           sh 'terraform apply --auto-approve'
         }
